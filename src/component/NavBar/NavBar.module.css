@@ -16,14 +16,20 @@
     align-items: center;
     color: rgb(201, 196, 196);
     padding: 0;
+    margin: 0;
 }
 
 .navItems li{
    margin-left: 18px;
-   font-size: 0.8rem;
+   font-size: 14px;
 }
 
 .logo{
     max-width: 92px;
     height: fit-content;
+}
+
+.Link{
+    text-decoration: none;
+    color: inherit;
 }
