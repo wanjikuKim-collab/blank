@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import NavBar from './component/NavBar';
+import NavBar from './component/NavBar/NavBar';
 import BillBoard from './component/BillBoard';
 import Footer from './component/Footer';
 import Row from './component/Row';
