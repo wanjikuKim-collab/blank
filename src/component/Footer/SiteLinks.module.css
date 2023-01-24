@@ -1,0 +1,16 @@
+.linksList{
+    display: flex;
+    flex-wrap: wrap;/*breaks flex items into multiple lines*/
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.linksList li{
+    list-style: none;
+}
+
+/* spliting the list into four columns, three rows */
+.link{
+    flex-basis: 25%;
+}
