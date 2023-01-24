@@ -1,4 +1,5 @@
 import React from 'react'
+import SecondaryNAvigation from '../SecondaryNavigation/SecondaryNAvigation'
 import styles from "./NavBar.module.css"
 
 function NavBar() {
@@ -13,18 +14,15 @@ function NavBar() {
   ]
   return (
     <div className={styles.nav}>
-      <div>
-        <img src="" alt=""/>      
-        <ul>
+      <div className={styles.mainNav}>
+        <img className={styles.logo} src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="Netflix Logo"/>      
+        <ul className={styles.navItems}>
           {
-            navItems.map(item=><li>{item}</li>)
+            navItems.map(item=><li key={item}>{item}</li>)
           }
-        </ul>
+        </ul>       
       </div>
-      <div>
-        
-      </div>
-
+      <SecondaryNAvigation />
     </div>
   )
 }
