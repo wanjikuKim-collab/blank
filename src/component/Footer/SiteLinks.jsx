@@ -21,7 +21,10 @@ function SiteLinks() {
     <div>
       <ul className={styles.linksList}>
         {
-          footerSiteLinks.map(link=><li key={link} className={styles.siteLink}>{link}</li>)
+          footerSiteLinks.map(link=>{return(
+          <li key={link} className={styles.siteLink}>
+            <a href="">{link}</a>
+          </li>)})
         }
       </ul>
     </div>

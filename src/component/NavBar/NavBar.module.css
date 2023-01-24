@@ -1,5 +1,5 @@
 .nav{
-    background-color: rgb(12, 1, 1);
+    background-color: rgb(20,20,20);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,4 +32,9 @@
 .Link{
     text-decoration: none;
     color: inherit;
+    font-weight: 400;
+}
+
+.Link:hover{
+    color: rgb(148, 144, 144);
 }
