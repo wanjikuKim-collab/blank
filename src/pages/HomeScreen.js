@@ -1,6 +1,7 @@
 import {useState } from "react"
 import NavBar from "../component/NavBar/NavBar";
 import Footer from "../component/Footer/Footer"
+import BillBoard from "../component/BillBoard/BillBoard";
 
 
 
@@ -15,7 +16,8 @@ function HomeScreen() {
  
   return (
     <div>
-      <NavBar isScrolled ={isScrolled}/>
+      <BillBoard />
+      <NavBar isScrolled ={isScrolled}/>     
       <Footer />
     </div>
   )
