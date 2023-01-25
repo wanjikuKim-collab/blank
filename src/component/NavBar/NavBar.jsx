@@ -3,7 +3,7 @@ import SecondaryNAvigation from '../SecondaryNavigation/SecondaryNAvigation'
 import styles from "./NavBar.module.css"
 import { NavLink } from 'react-router-dom'
 
-function NavBar({isScrolled}) {
+function NavBar() {
   const links = [
    { name:'Home', link:"/"},
    { name:'TV Shows', link:"/series"},
