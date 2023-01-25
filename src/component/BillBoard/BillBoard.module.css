@@ -7,21 +7,48 @@
     width: 100%;
     z-index: -2;
 }
-
-.innerContainer{
-    position: absolute;
-}
-
 .heroImage{
     height: 56.25vw;
     width: 100%;
     object-fit: contain;
 }
 
+/*////////INFO////////*/
+
+/* NSERIES */
+.n_series{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(201, 202, 202);
+}
+
+.n_series img{
+    width: 3em;
+    margin-right: 10px;
+}
+
+.n_series h3{
+    font-size:2em;
+    font-weight: 900;  
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.info h1{
+    font-size: 8rem;
+    color: rgb(255, 255, 255);
+    font-weight: 900;
+    font-family: sans-serif;
+}
+
+.innerContainer{
+    position: absolute;
+}
+
 
 .description{
     margin: 0.9rem;
-    font-size: 1rem;
+    font-size: 23.04px;
     color: #e5e5e5;
     font-size: 1.5rem;
 

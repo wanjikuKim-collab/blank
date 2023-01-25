@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styles from './BillBoard.module.css'
 // import billboardHeroImage from './assets/Arisu.webp'
-import billboardHeroTitle from './assets/Title.webp'
+// import billboardHeroTitle from './assets/Title.webp'
+import netflixLogo from './assets/Netflix-logo.png'
 import axios from 'axios';
 
 
@@ -37,11 +38,18 @@ function BillBoard() {
           <div className={styles.billboard__fadeBottom}/>
         </div>
          {/* BILLBOARD DETAILS*/}
-        <div className={styles.info} >           
-          <img src={billboardHeroTitle} alt="Alice in Boderland" /> 
+        <div className={styles.info} >
+          <div>
+            <div className={styles.n_series}>
+                <img src={netflixLogo} alt="N logo"/>
+                <h3>SERIES</h3>
+            </div>
+            <h1>{movie?.title || movie?.name || movie?.original_name}</h1>
+          </div> 
+          {/* <img src={billboardHeroTitle} alt="Alice in Boderland" />  */}
           <div className={styles.description}>
             {
-              truncate(`An aimless gamer and his two friends find themselves in a paralle Tokyo, where they/'re forced to compete in a series of sadistic games to survive.`,150)
+              truncate(movie?.overview,150)
             }
             
           </div>

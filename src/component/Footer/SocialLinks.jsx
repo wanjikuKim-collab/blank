@@ -5,13 +5,13 @@ function SocialLinks() {
   return (
     <div className={styles.socials}>
        <span>
-        <a href=""><i className="big icon facebook" /></a>
+        <a href="/"><i className="big icon facebook" /></a>
       </span>
       <span>    
-        <a href=""><i className="big icon instagram" /></a>
+        <a href="/"><i className="big icon instagram" /></a>
       </span>
       <span>    
-        <a href=""><i className="big icon youtube" /></a>
+        <a href="/"><i className="big icon youtube" /></a>
       </span>      
     </div>
   )

@@ -23,7 +23,7 @@ function SiteLinks() {
         {
           footerSiteLinks.map(link=>{return(
           <li key={link} className={styles.siteLink}>
-            <a href="">{link}</a>
+            <a href="/">{link}</a>
           </li>)})
         }
       </ul>
