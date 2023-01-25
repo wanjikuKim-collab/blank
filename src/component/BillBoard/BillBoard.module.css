@@ -3,15 +3,19 @@
     left: 0;
     right: 0; 
     top:0;
-    margin: 0px -40px; 
     height: 56.25vw;
     width: 100%;
-    z-index: 0;
+    z-index: -2;
 }
 
 .innerContainer{
     position: absolute;
-    z-index: -1;
+}
+
+.description{
+    margin: 0.9rem;
+    font-size: 1rem;
+
 }
 
 .info{   
@@ -24,4 +28,25 @@
     width: 36%;
     z-index: 10;
     bottom: 35%;
+}
+
+.buttonLinks{
+    display: flex;
+    margin: 25px 0px 0px 0px;
+}
+
+.buttonLinks a,
+.buttonLinks button{
+    border-radius: 7px;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px 15px 0;
+    padding: 0.5rem 2rem;
+    font-size:23px;   
+    
+}
+
+.buttonLinks button{
+    background-color: rgba(109, 109, 110, 0.7) ;
 }
