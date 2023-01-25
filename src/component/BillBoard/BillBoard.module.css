@@ -12,13 +12,22 @@
     position: absolute;
 }
 
+.heroImage{
+    height: 56.25vw;
+    width: 100%;
+    object-fit: cover;
+}
+
+
 .description{
     margin: 0.9rem;
     font-size: 1rem;
+    color: #e5e5e5;
+    font-size: 1.5rem;
 
 }
 
-.info{   
+.billboard .info{   
     position: absolute; 
     display: flex;
     flex-direction: column;
@@ -50,3 +59,4 @@
 .buttonLinks button{
     background-color: rgba(109, 109, 110, 0.7) ;
 }
+

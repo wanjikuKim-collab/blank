@@ -6,13 +6,14 @@ import billboardHeroTitle from './assets/Title.webp'
 
 function BillBoard() {
   return (
-    <div className={styles.billboard}>
+    
+    <div className={styles.billboard}>      
       <div className={styles.innerContainer}>
-        {/* <div className={styles.imageWrapper}> */}
-          <img src={billboardHeroImage} alt="Arisu in the middle of Tokyo which has skyscrapers covered in overgrown plants" />
-        {/* </div> */}
+        <div className={styles.imageWrapper}>
+          <img className={styles.heroImage} src={billboardHeroImage} alt="Arisu in the middle of Tokyo which has skyscrapers covered in overgrown plants" />
+        </div>
         <div className={styles.info} >
-          <img className={styles. heroImage} src={billboardHeroTitle} alt="Alice in Boderland" />
+          <img src={billboardHeroTitle} alt="Alice in Boderland" />
           <div className={styles.description}>
             An aimless gamer and his two friends find themselves in a paralle Tokyo, where they're forced to compete in a series of sadistic games to survive.
           </div>
