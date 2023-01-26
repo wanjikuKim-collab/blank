@@ -12,12 +12,11 @@ function HomeScreen() {
     <div>
       <BillBoard />
       <NavBar/>
-     
-      <Row title='Top Rated' fetchURL = {requests.fetchTopRated}/>
       <Row title='Netflix Originals' fetchURL = {requests.fetchNetflixOriginals}/>
       <Row title='Trending Now' fetchURL = {requests.fetchTrending}/>
-      <Row title='Comedy Movies' fetchURL = {requests.fetchComedyMovies}/>
-      <Row title='Action Movies' fetchURL = {requests.fetchActionMovies}/>
+      <Row title='Comedy ' fetchURL = {requests.fetchComedyMovies}/>
+      <Row title='Top Rated' fetchURL = {requests.fetchTopRated} isLargeRow/>
+      <Row title='Action & Adventure' fetchURL = {requests.fetchActionMovies}/>
       <Row title='Documentaries' fetchURL = {requests.fetchDocumentaries}/>   
       
       <Footer />
