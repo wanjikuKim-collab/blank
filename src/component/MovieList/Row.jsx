@@ -35,7 +35,14 @@ function Row({title,fetchURL, isLargeRow}) {
 
   return (
     <div className='row'>
-      <h2>{title}</h2>
+      {/* TITLE */}
+      <h2>
+        {title}
+        <span className='doubleRight'>
+          <i className="icon angle double right"/>
+        </span>
+      </h2>
+     {/* SLIDER */}
       <div className='slider_items'>
         <div id="slider" className="row_posters">
           <button onClick={scrollLeft} className='handlePrev'>
