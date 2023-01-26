@@ -6,6 +6,7 @@ import netflixLogo from './assets/Netflix-logo.png'
 import axios from 'axios';
 
 
+
 function BillBoard() {
   const[movie, setMovie] = useState([]);
 
