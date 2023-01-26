@@ -9,9 +9,7 @@ function NavBar() {
    { name:'Home', link:"/"},
    { name:'TV Shows', link:"/series"},
    { name:'Movies', link:"/movies"},
-   { name:'New & Popular', link:"/new&popular"},
    { name:'My List', link:"/mylist"},
-   { name:'Browse by Languages', link:"/languages"}
   ]
 
   return (
