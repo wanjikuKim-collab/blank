@@ -7,14 +7,12 @@ import requests from '../helpers/Request';
 
 
 
-function HomeScreen() {
-
- 
+function HomeScreen() { 
   return (
     <div>
       <BillBoard />
       <NavBar/>
-        
+     
       <Row title='Top Rated' fetchURL = {requests.fetchTopRated}/>
       <Row title='Netflix Originals' fetchURL = {requests.fetchNetflixOriginals}/>
       <Row title='Trending Now' fetchURL = {requests.fetchTrending}/>

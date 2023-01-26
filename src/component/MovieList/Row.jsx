@@ -1,21 +1,25 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import styles from './Row.module.css'
+import axios from 'axios'
 
-function Row({title,fetchUrl}) {
-  const [movie, setMovies]=useState([]);
+const instance = axios.create({
+    baseURL: "https://api.themoviedb.org/3"
+})
+
+function Row({title,fetchURL}) {
+  const [movies, setMovies]=useState([]);
 
   useEffect(()=>{
-    async function fetchData(){
-      const request = await axios.get(fetchUrl);
+    const fetchMovies = async()=>{
+      const request = await instance.get(fetchURL)
       setMovies(request.data.results)
-      return request;
+      return request
     }
+    fetchMovies()
+  },[fetchURL])
 
-    fetchData()
-  },[fetchUrl])
+  console.log(movies)
 
-  console.log(movie)
   return (
     <div className={styles.row}>
       <h2>{title}</h2>
