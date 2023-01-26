@@ -1,6 +1,8 @@
 .row{
- 
-    margin-left: 20px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+    margin-left: 40px;
 }
 
 .row h2{
@@ -12,29 +14,77 @@
     vertical-align: bottom;
 }
 
+/*//////////////SLIDER ITEMS////////////*/
+
+.slider_items{
+    position: relative;
+}
+
 .row_posters{
     display:flex;
-    overflow-y: hidden;
-    overflow-x: scroll;/*when we scroll in the x direction it's scrollable*/
-    padding:20px;    
+    overflow-x: scroll;/*allows  scrollable*/
+    scroll-behavior: smooth;
+    padding:0 0.2vw;    
+    box-sizing: border-box;
+    vertical-align: top;
+    z-index: 1;
+    white-space: normal;
+
 }
 
 .row_poster{    
-width: 20%;
-margin-right: 10px;
-box-sizing: border-box;
-border-radius: 10px;
-transition: transform 450ms;
+    width:100%;
+    height:10vw;
+    margin-right: 15px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    transition: transform 450ms;
+
 }
 
 .row_poster:hover{
-    transform: scale(2);
-    position:absolute;
+    transform: scale(1.5);
     opacity:1;
-    width: 20%;
 }
 
-/*to hide scroll bar*/
-.row_poster::-webkit-scrollbar{
+/* to hide scroll bar*/
+.row_posters::-webkit-scrollbar{
     display: none;
+}
+
+/*////////////////NEXT BUTTON///////////////*/
+.handleNext,
+.handlePrev{
+    background:hsla(0,0%,8%,.5);
+    bottom: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    top:0;
+    width: 4%;
+    right: 0;
+    z-index: 20;
+    height: 100%;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    font-size: 3em;
+    display: none;
+}
+
+.handlePrev{
+   left: 0;
+}
+
+/*makes next button visisble*/
+.row_posters:hover .handleNext,
+.row_posters:hover .handlePrev{    
+    display: flex;  
+}
+
+.icon{
+    font-size: 5em;
 }
