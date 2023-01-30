@@ -98,6 +98,13 @@ On the `Homescreen` component, I passed in the titles and fetch urls as props.  
 The API key and the End points for the various movie and series categories are in the helpers folder in the `Request` component. I had to create an account on `TMDB` for me to get an API key for my app.
 
 
+### ScreenShots
+![Billboard ](https://user-images.githubusercontent.com/118020143/215549413-c05e3407-7542-4f68-8f43-a60066000cb1.png)
+![Screenshot from 2023-01-30 20-26-45](https://user-images.githubusercontent.com/118020143/215549817-9caf0ba5-2d8b-4efb-9497-1594bd4bad24.png)
+
+
+
+
 ### Deployment
 
 To deploy this application I used firebase. This is the link:
