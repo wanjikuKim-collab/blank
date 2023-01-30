@@ -1,71 +1,117 @@
-# Getting Started with Create React App
+# TITLE: REACT NETFLIX CLONE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction:
 
-## Available Scripts
+Netflix is one of the world's major movie content streaming platforms, where you can watch unlimited movies and TV shows. This is a Netflix clone made with react,CSS,HTML, JavaScript and firebase. Movie data is asynchronously fetched from TMDB API which has over 30 thousand movies.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+1. Has a home page which displays different gernes of movies and TV shows.
+2. It also has separate pages for Movies and TV shows.
+3. It includes a sign in and sign up feature.
+4. Has a smooth card slider effect.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# CODE
 
-### `npm test`
+## SetUP
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- I first began by creating the main folder using `npx create-react-app <name>`
+- Next I created two main folders (component and pages) to hold the components and pages as the names suggest.
 
-### `npm run build`
+### NavBar
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The NavBar has two sections:
+    - Primary Navigation
+    - Secondary Naigation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The primary navbar contains limks to the various pages and the NEtflix Logo. Whereas the Secondary NavBar contains the search bar and the user's avatar. For the icons, I used Semantic UI.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I used the array map method to iterate through the array which had nested objects of the page name and the path name.
 
-### `npm run eject`
+When you scroll down the background changes to black when the height is greater than 100.To achieve this I used the `scroll` event listener, the `useEffect ` hook and a `cleanup ` function. I used the `useState` hook to set the initial value to `false`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Key feature I learnt : the scroll event listener
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Footer
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+My footer section has 4 main parts:
+    - Social Media Links
+    - Site Links
+    - Service Code Button 
+    - Copyright
 
-## Learn More
+Key feature I learnt here was `flex-wrap` which splits the items into multiple lines and `flex-basis` which determines the number of rows and colums
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Billboard
 
-### Code Splitting
+This was the key section for me because it's the centr piece of the application. I used axios to fetch data from the TMDB API to display different movie/series images on refresh. So the billboard has various parts:
+    - The hero image - an image of the movie
+    - The N series logo
+    - The movie/series title
+    - The play button and the more-info button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The main thing i learnt here was using axios instead of the normal fetch method. I installed the axios library by running `npm install axios` . For axios, I imported it from my local axios and not the global axios as it kept bringing an error
 
-### Analyzing the Bundle Size
+I used `Math.random` to generate random images for my hero section.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+``` jsx
+ useEffect(()=>{
+    async function fetchMovieData(){
+      const request = await axios.get("https://api.themoviedb.org/3/discover/tv?api_key=30d37017426bc7f99dc52b6e58ee8d63&with_networks=213");
+      setMovie(
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length -1)
+        ]
+      );
+      return request
+    }
+    fetchMovieData()
+  },[])
 
-### Making a Progressive Web App
+```
+The other thing was the `truncate` function which checks the word length of the description.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```jsx
 
-### Advanced Configuration
+const truncate =(string,n)=>{
+    return string?.length > n ? string.substr(0,n-1) + '...': string
+  }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+It trancates the words when the characters reach the given word length and replaces them with `...` . It has two parameters, the string and the number. The first question mark is there because some movies may lack descriptions so this eliminates the error.
+This applies to the movie name as well which I've used an `or` condition to check for the movie title. This was because the titles in some objects came with different key names.
+
+```jsx
+
+<h1>{movie?.title || movie?.name || movie?.original_name}</h1>
+
+```
+  
+
+### Rows
+
+On the `Homescreen` component, I passed in the titles and fetch urls as props.  Then in the `Row` component, I rendered the titles. I created a state to hold the dynamic movie data. There is a scroll event to help with scrolling through each row.
+
+The API key and the End points for the various movie and series categories are in the helpers folder in the `Request` component. I had to create an account on `TMDB` for me to get an API key for my app.
+
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To deploy this application I used firebase. This is the link:
+        https://netflix-clone-phase2-react.web.app
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# wanjikuKim-collab-Phase-2-IP-Netflix-Clone-React
+### IN PROGRESS
+I'm currently working on the signup and sign in pages
+
+
+### Support/ Contact Details:
+- wanjikukimani24@gmail.com
+- (+254) 0797493262
+
+### License
+
+Licenced under th MIT-license
